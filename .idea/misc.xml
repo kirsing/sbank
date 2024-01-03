@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/account-microservice" />
+    <file type="web" url="file://$PROJECT_DIR$/card-microservice" />
+    <file type="web" url="file://$PROJECT_DIR$/configserver" />
+    <file type="web" url="file://$PROJECT_DIR$/eurekaserver" />
+    <file type="web" url="file://$PROJECT_DIR$/gatewayserver" />
+    <file type="web" url="file://$PROJECT_DIR$/loans-microservice" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
