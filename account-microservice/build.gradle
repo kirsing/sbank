@@ -53,6 +53,6 @@ tasks.named('test') {
 }
 jib {
     to {
-        image = 'kirsing123/accounts:v4'
+        image = 'kirsing123/accounts:v5'
     }
 }

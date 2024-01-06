@@ -41,6 +41,6 @@ tasks.named('test') {
 }
 jib {
 	to {
-		image = 'kirsing123/gatewayserver:v4'
+		image = 'kirsing123/gatewayserver:v5'
 	}
 }

@@ -54,7 +54,7 @@ dependencyManagement {
 }
 jib {
 	to {
-		image = 'kirsing123/cards:v4'
+		image = 'kirsing123/cards:v5'
 	}
 }
 
