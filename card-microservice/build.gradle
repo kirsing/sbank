@@ -34,6 +34,7 @@ dependencies {
 	implementation 'com.mysql:mysql-connector-j:8.2.0'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'io.micrometer:micrometer-registry-prometheus:1.12.2'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	//implementation 'com.h2database:h2:2.2.224'
 	//testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
@@ -54,7 +55,7 @@ dependencyManagement {
 }
 jib {
 	to {
-		image = 'kirsing123/cards:v5'
+		image = 'kirsing123/cards:v7.1'
 	}
 }
 
