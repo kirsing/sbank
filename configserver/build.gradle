@@ -25,6 +25,8 @@ dependencies {
     implementation 'io.micrometer:micrometer-registry-prometheus:1.12.2'
     implementation 'org.springframework.cloud:spring-cloud-config-server'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.28.0'
+    runtimeOnly 'io.opentelemetry.javaagent:opentelemetry-javaagent'
 }
 
 dependencyManagement {
@@ -38,6 +40,6 @@ tasks.named('test') {
 }
 jib {
     to {
-        image = 'kirsing123/configserver:v7.1'
+        image = 'kirsing123/configserver:v7.2'
     }
 }

@@ -100,8 +100,10 @@ public class CardsController {
     public ResponseEntity<CardsDto> fetchCardDetails(@RequestHeader("sbank-correlation-id") String correlationId,
                                                     @RequestParam @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                                String mobileNumber) {
-        logger.debug("sbank-correlation-id found: {}", correlationId);
+        //logger.debug("sbank-correlation-id found: {}", correlationId);
+        logger.debug("fetchCardDetails method is starting");
         CardsDto cardsDto = cardService.fetchCard(mobileNumber);
+        logger.debug("fetchCardDetails method ended");
         return ResponseEntity.status(HttpStatus.OK).body(cardsDto);
     }
 
