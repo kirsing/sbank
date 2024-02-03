@@ -1,6 +1,7 @@
 package com.kirsing.accountmicroservice.service.implementation;
 
 import com.kirsing.accountmicroservice.constants.AccountConstants;
+import com.kirsing.accountmicroservice.dto.AccountMsgDto;
 import com.kirsing.accountmicroservice.dto.AccountsDto;
 import com.kirsing.accountmicroservice.dto.CustomerDto;
 import com.kirsing.accountmicroservice.entity.Accounts;
@@ -13,6 +14,9 @@ import com.kirsing.accountmicroservice.repository.AccountsRepository;
 import com.kirsing.accountmicroservice.repository.CustomerRepository;
 import com.kirsing.accountmicroservice.service.IAccountService;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -22,9 +26,12 @@ import java.util.Random;
 @AllArgsConstructor
 public class AccountServiceImplementation implements IAccountService {
 
-    private AccountsRepository accountsRepository;
+    private static final Logger log = LoggerFactory.getLogger(AccountServiceImplementation.class);
 
+    private AccountsRepository accountsRepository;
     private CustomerRepository customerRepository;
+    private final StreamBridge streamBridge;
+
     @Override
     public void createAccount(CustomerDto customerDto) {
         Customer customer = CustomerMapper.mapToCustomer(customerDto, new Customer());
@@ -34,7 +41,16 @@ public class AccountServiceImplementation implements IAccountService {
                     +customerDto.getMobileNumber());
         }
         Customer savedCustomer = customerRepository.save(customer);
-        accountsRepository.save(createNewAccount(savedCustomer));
+        Accounts savedAccount = accountsRepository.save(createNewAccount(savedCustomer));
+        sendCommunication(savedAccount, savedCustomer);
+    }
+
+    private void sendCommunication(Accounts account, Customer customer) {
+        var accountsMsgDto = new AccountMsgDto(account.getAccountNumber(), customer.getName(),
+                customer.getEmail(), customer.getMobileNumber());
+        log.info("Sending Communication request for the details: {}", accountsMsgDto);
+        boolean result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+        log.info("Is the Communication request successfully triggered?: {}", result);
     }
 
     @Override
@@ -98,5 +114,18 @@ public class AccountServiceImplementation implements IAccountService {
         newAccount.setBranchAddress(AccountConstants.ADDRESS);
         return newAccount;
   }
+    @Override
+    public boolean updateCommunicationStatus(Long accountNumber) {
+        boolean isUpdated = false;
+        if(accountNumber != null) {
+            Accounts accounts = accountsRepository.findById(accountNumber).orElseThrow(
+                    () -> new ResourceNotFoundException("Account", "AccountNumber", accountNumber.toString())
+            );
+            accounts.setCommunicationSw(true);
+            accountsRepository.save(accounts);
+            isUpdated= true;
+        }
+        return isUpdated;
+    }
 
 }

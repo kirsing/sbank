@@ -8,6 +8,7 @@
     <file type="web" url="file://$PROJECT_DIR$/eurekaserver" />
     <file type="web" url="file://$PROJECT_DIR$/gatewayserver" />
     <file type="web" url="file://$PROJECT_DIR$/loans-microservice" />
+    <file type="web" url="file://$PROJECT_DIR$/message" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Cards-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Cards-microservice.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/account-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/account-microservice.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/loans-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/loans-microservice.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/v3-sbank.iml" filepath="$PROJECT_DIR$/.idea/v3-sbank.iml" />
     </modules>
   </component>
