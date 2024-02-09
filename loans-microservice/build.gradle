@@ -59,6 +59,6 @@ tasks.named('test') {
 //}
 jib {
     to {
-        image = 'kirsing123/loans:v7.2'
+        image = 'kirsing123/loans:v9.1'
     }
 }

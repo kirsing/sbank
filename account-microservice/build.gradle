@@ -41,7 +41,8 @@ dependencies {
     //testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
     implementation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.28.0'
     implementation 'org.springframework.cloud:spring-cloud-stream'
-    implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit:4.1.0'
+    //implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit:4.1.0'
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka:4.1.0'
     runtimeOnly 'io.opentelemetry.javaagent:opentelemetry-javaagent'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
@@ -60,6 +61,6 @@ tasks.named('test') {
 }
 jib {
     to {
-        image = 'kirsing123/accounts:v8.0'
+        image = 'kirsing123/accounts:v9.1'
     }
 }

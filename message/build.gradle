@@ -23,7 +23,8 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.cloud:spring-cloud-stream'
-    implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit:4.1.0'
+    //implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit:4.1.0'
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka:4.1.0'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.cloud:spring-cloud-stream-test-binder'
 }
@@ -39,6 +40,6 @@ tasks.named('test') {
 }
 jib {
     to {
-        image = 'kirsing123/message:v8.0'
+        image = 'kirsing123/message:v9.1'
     }
 }
