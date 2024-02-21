@@ -43,7 +43,7 @@ spec:
             - name: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI
               valueFrom:
                 configMapKeyRef:
-                  name: eazybank-configmap
+                  name: sbank-configmap
                   key: SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI
 ---
 apiVersion: v1

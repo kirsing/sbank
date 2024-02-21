@@ -37,16 +37,16 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
     implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:'
-    //implementation 'com.h2database:h2:2.2.224'
-    //testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
+    implementation 'com.h2database:h2:2.2.224'
+    testImplementation group: 'com.h2database', name: 'h2', version: '2.2.224'
     implementation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.28.0'
     implementation 'org.springframework.cloud:spring-cloud-stream'
-    //implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit:4.1.0'
+    implementation 'org.springframework.cloud:spring-cloud-stream-binder-rabbit:4.1.0'
     implementation 'org.springframework.cloud:spring-cloud-stream-binder-kafka:4.1.0'
     runtimeOnly 'io.opentelemetry.javaagent:opentelemetry-javaagent'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.mysql:mysql-connector-j'
+    //runtimeOnly 'com.mysql:mysql-connector-j' 8.5
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.cloud:spring-cloud-stream-test-binder'
@@ -61,6 +61,6 @@ tasks.named('test') {
 }
 jib {
     to {
-        image = 'kirsing123/accounts:v9.1'
+        image = 'kirsing123/accounts:v9.5'
     }
 }

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: loans
-          image: kirsing123/loans:v8.0
+          image: kirsing123/loans:v8.5
           ports:
             - containerPort: 8090
           env:
