@@ -1,20 +1,20 @@
-deploymentName: accounts-deployment
-serviceName: accounts
-appLabel: accounts
-appName: accounts
+deploymentName: loans-deployment
+serviceName: loans
+appLabel: loans
+appName: loans
 
 replicaCount: 1
 
 image:
-  repository: kirsing123/accounts
+  repository: kirsing123/loans
   tag: v9.5
 
-containerPort: 8080
+containerPort: 8090
 
 service:
   type: ClusterIP
-  port: 8080
-  targetPort: 8080
+  port: 8090
+  targetPort: 8090
 
 appname_enabled: true
 profile_enabled: true
