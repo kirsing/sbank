@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.1'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'com.google.cloud.tools.jib' version '3.4.0'
+}
+
+group = 'com.kirsing'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2023.0.0")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'io.micrometer:micrometer-registry-prometheus:1.12.2'
+    implementation 'org.springframework.cloud:spring-cloud-config-server'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.opentelemetry.javaagent:opentelemetry-javaagent:1.28.0'
+    runtimeOnly 'io.opentelemetry.javaagent:opentelemetry-javaagent'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+jib {
+    to {
+        image = 'kirsing123/configserver:v10.0'
+    }
+}

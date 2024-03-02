@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Cards-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Cards-microservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/account-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/account-microservice.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kube-separate.iml" filepath="$PROJECT_DIR$/.idea/kube-separate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/loans-microservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/loans-microservice.main.iml" />
+    </modules>
+  </component>
+</project>
