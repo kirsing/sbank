@@ -40,6 +40,6 @@ tasks.named('test') {
 }
 jib {
     to {
-        image = 'kirsing123/configserver:v9.1'
+        image = 'kirsing123/configserver:v10.0'
     }
 }

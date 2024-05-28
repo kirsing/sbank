@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cards
-          image: kirsing123/cards:v8.5
+          image: kirsing123/cards:test
           ports:
             - containerPort: 9000
           env:

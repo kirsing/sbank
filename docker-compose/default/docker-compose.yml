@@ -42,7 +42,7 @@ services:
       service: microservice-db-config
 
   configserver:
-    image: "kirsing123/configserver:v6"
+    image: "kirsing123/configserver:v10.0"
     container_name: configserver-microservice
     ports:
       - "8071:8071"

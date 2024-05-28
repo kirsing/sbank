@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: eurekaserver
-        image: kirsing123/eurekaserver:v8.0
+        image: kirsing123/eurekaserver:v1.1
         ports:
         - containerPort: 8070
         env:
