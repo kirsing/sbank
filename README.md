@@ -114,68 +114,59 @@ Explore Rest APIs
       <td><a href="README.md#alladvertisementsFromAdmin">Info</a></td>
       <td></td>
       <td></td>
-  </tr>
-      <td>GET</td>
-      <td>alladvertisements/{advertisement_id}</td>
-      <td>Get advertisement by Id From Admin</td>
+  <tr>
+      <td>PUT</td>
+      <td>/update</td>
+      <td>Update Customer & Account details</td>
+      <td><a href="README.md#alladvertisementsFromAdmin">Info</a></td>
       <td></td>
-      <td><a href="README.md#advertisementById">Info</a></td>
       <td></td>
       <td></td>
   </tr>
   <tr>
       <td>PUT</td>
-      <td>update/{advertisement_id}</td>
-      <td>Update advertisement by Id</td>
-      <td></td>
-      <td></td>
+      <td>/update</td>
+      <td>Update card details</td>
       <td><a href="README.md#update">Info</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+  </tr>
+  <tr>
+      <td>PUT</td>
+      <td>/update</td>
+      <td>Update loan details</td>
+      <td><a href="README.md#update">Info</a></td>
+      <td></td>
+      <td></td>
       <td></td>
   </tr>
   <tr>
       <td>DELETE</td>
-      <td>delete/{advertisement_id} </td>
-      <td>Delete advertisement by Id</td>
+      <td>/delete?mobileNumber{mobileNumber} </td>
+      <td>Delete Customer & Account details based on the mobile number</td>
       <td></td>
       <td><a href="README.md#delete">Info</a></td>
       <td></td>
       <td></td>
   </tr>
   <tr>
-      <td>GET</td>
-      <td>advertisement/{advertisement_id}/approve</td>
-      <td>Approve advertisement By Id</td>
+      <td>DELETE</td>
+      <td>/delete?mobileNumber{mobileNumber} </td>
+      <td>Delete Card details based on a mobile number</td>
       <td></td>
-      <td><a href="README.md#approve">Info</a></td>
-      <td></td>
-      <td></td>
-  </tr>
-  <tr>
-      <td>GET</td>
-      <td>advertisement/{advertisement_id}/reject</td>
-      <td>Reject advertisement By Id</td>
-      <td></td>
-      <td><a href="README.md#reject">Info</a></td>
+      <td><a href="README.md#delete">Info</a></td>
       <td></td>
       <td></td>
   </tr>
   <tr>
-      <td>GET</td>
-      <td>alladvertisements</td>
-      <td>Get all advertisements From User</td>
+      <td>DELETE</td>
+      <td>/delete?mobileNumber{mobileNumber} </td>
+      <td>Delete Loan details based on a mobile number</td>
+      <td></td>
+      <td><a href="README.md#delete">Info</a></td>
       <td></td>
       <td></td>
-      <td></td>
-      <td><a href="README.md#alladvertisementsFromUser">Info</a></td>
-  </tr>
-  <tr>
-      <td>GET</td>
-      <td>alladvertisements</td>
-      <td>alladvertisements/{advertisement_id}</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><a href="README.md#advertisementByIdFromUser">Info</a></td>
   </tr>
 </table>
 
