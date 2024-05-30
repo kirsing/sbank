@@ -318,3 +318,75 @@ Explore Rest APIs
     http://localhost:8072/sbank/accounts/api/contact-info
     Bearer Token : Not Required
 ```
+## 🔨 Run the App
+<b>1 )</b> Download your project from this link `https://github.com/kirsing/sbank`
+
+<b>2 )</b> Go to the project's home directory :  `cd ~/sbank-main`
+
+<b>Docker</b>
+
+<b>1 )</b> Install <b>Docker Desktop</b>. Here is the installation `https://www.docker.com/get-started/`
+
+<b>2 )</b> Go to the specific directory: `cd ~/sbank-main/docker-compose/prod`
+
+<b>3 )</b> Run all <b>Containers</b> through this command - `docker compose up -d`
+
+<b>Kubernetes</b>
+
+<b>1 )</b> Install <b>minikube</b> or enable Kubernetes on Docker Desktop
+
+<b>2 )</b> Install <b>Helm</b>  `https://helm.sh/docs/intro/quickstart/`
+
+<b>3 )</b> Go to the directory :  `cd ~/sbank-main/helm/environments/`
+
+<b>4 )</b> Install all <b>Helm Charts</b> using **Helm** through this command
+`helm install <your-application-name> dev-env`
+
+### Implement KeyCloak settings
+<details>
+ <p> 1 ) Open Keycloak on the Browser through localhost:7080 </p>
+  <p>2 ) Enter username and password (admin : admin) </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/f784b52b-95b1-4e2a-a6ea-468620a29418>
+ 
+
+### <p>Authorization code grant flow </p>
+<p> Create Client </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/36470979-6624-47e4-b3df-de5db877e236>
+
+<img src=https://github.com/kirsing/sbank/assets/86996284/e324d8e5-f135-45bb-8524-1ce1d98a433c>
+<img src=https://github.com/kirsing/sbank/assets/86996284/fefdde7e-3356-4f42-9e02-18c221d9d0a1>
+<img src=https://github.com/kirsing/sbank/assets/86996284/e51ae88d-0f2e-4758-99d0-203cfb4659bb>
+
+<p>Save client secret </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/9715e531-e0af-4deb-8bc7-1b4860687d95>
+
+<p>Create ROLES: ACCOUNTS, CARDS, LOANS </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/ad99ed7b-d608-4bcb-8848-583dd67a22d8>
+
+<p>Create users </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/27de10e8-6ffa-4afe-b84d-145d0d691786>
+
+<img src=https://github.com/kirsing/sbank/assets/86996284/a138332b-0b72-45b1-b880-17fe473510e7>
+
+<img src=https://github.com/kirsing/sbank/assets/86996284/d505f874-3450-4e21-bfb2-90efb1122a2a>
+
+<p>Assign ROLE to the user </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/d3b12ca2-ab61-4aa0-8b88-8dd7a4915415>
+
+<img src=https://github.com/kirsing/sbank/assets/86996284/439e2228-df83-4320-afed-f929d497f792>
+
+</details>  
+
+
+### Screenshots
+<details>
+<summary>Click here to show the screenshot of project</summary>
+<p> Docker Desktop to show all running containers </p>
+
+<p> Grafana </p>
+
+<p> Kafka </p>
+
+<p> Kubernetes Dashboard </p>
+
+</details>

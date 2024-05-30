@@ -87,17 +87,19 @@
     networks:
       <<: *loki-dns
 
-  promtail:
-      image: grafana/promtail:2.9.2
-      volumes:
-        - ../observability/promtail/promtail-local-config.yaml:/etc/promtail/config.yaml:ro
-        - /var/run/docker.sock:/var/run/docker.sock
-      command: -config.file=/etc/promtail/config.yaml
-      depends_on:
+  alloy:
+    image: grafana/alloy:v1.0.0
+    volumes:
+      - ../observability/alloy/alloy-local-config.yaml:/etc/alloy/config.alloy:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    command: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
+    ports:
+      - 12345:12345
+    depends_on:
         - gateway
-      extends:
-        file: common-config.yml
-        service: network-deploy-service
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
 
   minio:
     image: minio/minio
