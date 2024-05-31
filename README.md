@@ -381,12 +381,9 @@ Explore Rest APIs
 ### Screenshots
 <details>
 <summary>Click here to show the screenshot of project</summary>
-<p> Docker Desktop to show all running containers </p>
-
 <p> Grafana </p>
-
-<p> Kafka </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/9eda73c7-45bc-4e97-bb76-836f5a53a2e8>
 
 <p> Kubernetes Dashboard </p>
-
+<img src=https://github.com/kirsing/sbank/assets/86996284/6da595cc-de00-4951-860d-d3dfc96ca7c5>
 </details>
