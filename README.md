@@ -342,6 +342,50 @@ Explore Rest APIs
 <b>4 )</b> Install all <b>Helm Charts</b> using **Helm** through this command
 `helm install <your-application-name> dev-env`
 
+## Implement settings (K8s)
+<details>
+
+#### KeyCloak (Get the KeyCloak URL)
+
+```
+    export HTTP_SERVICE_PORT=$(kubectl get --namespace default -o jsonpath="{.spec.ports[?(@.name=='http')].port}" services keycloak)
+    export SERVICE_IP=$(kubectl get svc --namespace default keycloak -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+    echo "http://${SERVICE_IP}:${HTTP_SERVICE_PORT}/"
+```
+#### KeyCloak (Access the Administration console) - generate credentials:
+```
+  echo Username: user
+  echo Password: $(kubectl get secret --namespace default keycloak -o jsonpath="{.data.admin-password}" | base64 -d)
+```
+
+#### Prometheus (Get Access from outside cluster)
+
+ ```
+   echo "Prometheus URL: http://127.0.0.1:9090/"
+    kubectl port-forward --namespace default svc/prometheus-kube-prometheus-prometheus 9090:9090
+```
+
+#### Grafana (Get Grafana URL)
+
+ ```
+    echo "Browse to http://127.0.0.1:8080"
+    kubectl port-forward svc/grafana 8080:3000 &
+```
+
+#### Grafana (Credentials)
+ ```
+    echo "User: admin"
+    echo "Password: $(kubectl get secret grafana-admin --namespace default -o jsonpath="{.data.GF_SECURITY_ADMIN_PASSWORD}" | base64 -d)"
+
+```
+
+
+
+
+
+
+</details>
+
 ### Implement KeyCloak settings
 <details>
  <p> 1 ) Open Keycloak on the Browser through localhost:7080 </p>
@@ -375,6 +419,26 @@ Explore Rest APIs
 
 <img src=https://github.com/kirsing/sbank/assets/86996284/439e2228-df83-4320-afed-f929d497f792>
 
+### <p>Client credential code grant flow </p>
+<img src=https://github.com/kirsing/sbank/assets/86996284/7a258947-7c39-4edd-9f87-1c4929542115>
+<img src=https://github.com/kirsing/sbank/assets/86996284/3cc116c9-5d06-4903-bc09-94a67afedb0e>
+<img src=https://github.com/kirsing/sbank/assets/86996284/cefac094-71dc-4d3d-a83b-2a5be59abda8>
+
+
+### **Attached postman collection**
+
+**Get Access Token via Client Credentials GRANT FLOW**
+
+Separate request
+<img src=https://github.com/kirsing/sbank/assets/86996284/5313aa17-ad71-4251-b851-42fa008627e6>
+or
+<img src=https://github.com/kirsing/sbank/assets/86996284/429b9657-4e48-4303-9e75-136f5b1091a9>
+
+**Get Access Token via Authorize Code GRANT FLOW**
+<img src=https://github.com/kirsing/sbank/assets/86996284/ad502150-e635-485d-9b8a-ca65a67327b8>
+<img src=https://github.com/kirsing/sbank/assets/86996284/4411b2a5-d7c7-4d27-a60d-47f044e17a8b>
+
+**_"State section" consists of your random symbols/numbers_**
 </details>  
 
 
